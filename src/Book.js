@@ -13,11 +13,13 @@ class Book extends React.Component {
             <div className="book-top">
                 <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${this.props.image})` }}></div>
                 <div className="book-shelf-changer">
-                <select onChange={this.updateBook}> 
+                <select onChange={this.updateBook} defaultValue={this.props.shelf}> 
                     <option value="move" disabled>Move to...</option>
-                    {[{value: "currentlyReading", text: "Currently Reading"},{value: "wantToRead", text: "Want To Read"},{value: "read", text: "Read"},{value: "none", text: "None"}].map((selector) =>
-                       <option selected={ selector.value === this.props.shelf ? true : false} value={selector.value}>{selector.text}</option>
-                    )}
+                    <option value="currentlyReading">Currently Reading</option>
+                    <option value="wantToRead">Want to Read</option>
+                    <option value="read">Read</option>
+                    <option value="none">None</option>
+
                 </select>
                 </div>
             </div>
