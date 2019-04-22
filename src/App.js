@@ -21,6 +21,12 @@ class BooksApp extends React.Component {
     }))
   }
 
+  componentDidUpdate() {
+    BooksAPI.getAll().then(result => this.setState({
+      books: result
+    }))
+  }
+
   render() {
     return (
       <div className="app">
@@ -48,7 +54,6 @@ class BooksApp extends React.Component {
         ) : (
           <div className="list-books">
             <div className="list-books-title">
-              {console.log(this.state.books)}
               <h1>MyReads</h1>
             </div>
             <div className="list-books-content">

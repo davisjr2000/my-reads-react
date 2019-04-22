@@ -3,7 +3,7 @@ import * as BooksAPI from './BooksAPI'
 
 class Book extends React.Component {
     updateBook = (event) => {
-     BooksAPI.update(this.props.id, event.target.value)
+      BooksAPI.update(this.props.id, event.target.value)
     }
 
     render(){
