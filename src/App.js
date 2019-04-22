@@ -78,7 +78,7 @@ class BooksApp extends React.Component {
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                     {this.state.books.map((book) =>
-                         book.shelf === "read" ? <Book key = {book.id} image={book.imageLinks.thumbnail} author={book.author} title={book.title}/> : ""
+                         book.shelf === "read" ? <Book key = {book.id} shelf={book.shelf} image={book.imageLinks.thumbnail} author={book.author} title={book.title}/> : ""
                       )}      
                     </ol>
                   </div>
