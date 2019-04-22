@@ -58,7 +58,7 @@ class BooksApp extends React.Component {
                   <div className="bookshelf-books">
                     <ol className="books-grid">  
                       {this.state.books.map((book) =>
-                         book.shelf === "currentlyReading" ? <Book key = {book.id} image={book.imageLinks.thumbnail} author={book.author} title={book.title}/> : ""
+                         book.shelf === "currentlyReading" ? <Book id={book.id} key = {book.id} image={book.imageLinks.thumbnail} author={book.author} title={book.title}/> : ""
                       )}
                     </ol>
                   </div>
@@ -68,7 +68,7 @@ class BooksApp extends React.Component {
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                     {this.state.books.map((book) =>
-                         book.shelf === "wantToRead" ? <Book key = {book.id} image={book.imageLinks.thumbnail} author={book.author} title={book.title}/> : ""
+                         book.shelf === "wantToRead" ? <Book id={book.id} key = {book.id} image={book.imageLinks.thumbnail} author={book.author} title={book.title}/> : ""
                       )}
                     </ol>
                   </div>
@@ -78,7 +78,7 @@ class BooksApp extends React.Component {
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                     {this.state.books.map((book) =>
-                         book.shelf === "read" ? <Book key = {book.id} shelf={book.shelf} image={book.imageLinks.thumbnail} author={book.author} title={book.title}/> : ""
+                         book.shelf === "read" ? <Book id={book.id} key = {book.id} shelf={book.shelf} image={book.imageLinks.thumbnail} author={book.author} title={book.title}/> : ""
                       )}      
                     </ol>
                   </div>

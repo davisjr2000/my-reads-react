@@ -1,6 +1,11 @@
 import React from 'react'
+import * as BooksAPI from './BooksAPI'
 
 class Book extends React.Component {
+    updateBook = (event) => {
+     BooksAPI.update(this.props.id, event.target.value)
+    }
+
     render(){
         return (
             <li>
@@ -8,7 +13,7 @@ class Book extends React.Component {
             <div className="book-top">
                 <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${this.props.image})` }}></div>
                 <div className="book-shelf-changer">
-                <select>
+                <select onChange={this.updateBook}> 
                     <option value="move" disabled>Move to...</option>
                     {[{value: "currentlyReading", text: "Currently Reading"},{value: "wantToRead", text: "Want To Read"},{value: "read", text: "Read"},{value: "none", text: "None"}].map((selector) =>
                        <option selected={ selector.value === this.props.shelf ? true : false} value={selector.value}>{selector.text}</option>
