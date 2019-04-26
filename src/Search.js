@@ -14,6 +14,10 @@ class Search extends React.Component {
       BooksAPI.search(query).then(result => this.setState({
         books: result
       }))
+    } else {
+      this.setState({
+        books: []
+      })
     }
   }
    render(){
