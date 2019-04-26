@@ -8,17 +8,20 @@ class Search extends React.Component {
   }
 
   handleChange = (e) => {
-    console.log(1)
     let query = e.target.value
     if (query !== ""){
-      BooksAPI.search(query).then(result => this.setState({
-        books: result
-      }))
+      // BooksAPI.search(query).then(result => this.setState({
+      //   books: result
+      // }))
+      BooksAPI.search(query).then(result =>
+        result.error === "empty query" ? this.setState({ books: [] }) : this.setState({books: result})
+      )
     } else {
       this.setState({
         books: []
       })
     }
+    console.log(this.state.books)
   }
    render(){
        return (
